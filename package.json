@@ -1,0 +1,33 @@
+{
+  "name": "distillery",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index.js",
+    "go": "nodemon index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jrr-code/distillery.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "RMIT",
+  "bugs": {
+    "url": "https://github.com/jrr-code/distillery/issues"
+  },
+  "homepage": "https://github.com/jrr-code/distillery#readme",
+  "dependencies": {
+    "@discordjs/builders": "^0.11.0",
+    "@discordjs/rest": "^0.2.0-canary.0",
+    "discord-api-types": "^0.26.1",
+    "discord.js": "^13.5.0"
+  },
+  "devDependencies": {
+    "dotenv": "^10.0.0",
+    "eslint": "^8.6.0",
+    "nodemon": "^2.0.15"
+  }
+}
