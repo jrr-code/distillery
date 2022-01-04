@@ -13,7 +13,7 @@ const guildId = process.env.GUILD_ID;
 const token = process.env.TOKEN;
 
 for (const file of commandFiles) {
-    const command = require(`./commands/${file}`);
+    const command = require(`./Commands/${file}`);
     commands.push(command.data.toJSON());
 }
 
@@ -24,7 +24,7 @@ const rest = new REST({ version: '9' }).setToken(token);
         console.log('Started refreshing application (/) Commands.');
 
         await rest.put(
-            Routes.applicationCommands(clientId),
+            Routes.applicationGuildCommands(clientId, guildId),
             { body: commands },
         );
 

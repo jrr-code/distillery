@@ -18,7 +18,7 @@ if (process.env.NODE_ENV !== 'production') {
 const token = process.env.TOKEN;
 
 for (const file of commandFiles) {
-    const command = require(`./distillery/Commands/${file}`);
+    const command = require(`./Commands/${file}`);
     // Set a new item in the collection
     // With the key as the command name and the value as the exported module.
     client.commands.set(command.data.name, command);
