@@ -1,1 +1,0 @@
-// Allows user to purchase an upgrade.
