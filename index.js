@@ -1,7 +1,8 @@
-const { MongoClient } = require('mongodb');
+// const { MongoClient } = require('mongodb');
 const { Client, Collection, Intents } = require('discord.js');
 const mongoose = require('mongoose');
 const fs = require('fs');
+const { Games, Tags } = require('./Database/Mongoose');
 
 const client = new Client({ intents: [Intents.FLAGS.GUILDS] });
 // Add to the client.
@@ -10,13 +11,15 @@ client.event = new Collection();
 client.commands = new Collection();
 const commandFiles = fs.readdirSync('./Commands').filter(file => file.endsWith('.js'));
 
-
+// Get the environment variables.
 if (process.env.NODE_ENV !== 'production') {
     require('dotenv').config();
 }
 
+// We need this token to authenticate the bot.
 const token = process.env.TOKEN;
 
+// Create our commands.
 for (const file of commandFiles) {
     const command = require(`./Commands/${file}`);
     // Set a new item in the collection
@@ -25,45 +28,32 @@ for (const file of commandFiles) {
 }
 
 
+// Start it up!
 async function init() {
-    // alpha
-    const uri = `mongodb+srv://${process.env.DB_USER}:${process.env.DB_PWORD}@${process.env.DB_CLUSTER}.${process.env.DB_URL}`;
+    // Connect to Mongo DB
+    // (formatted this way for readability, you can string substitute but it makes for a long line)
+    const uri ="mongodb+srv://"
+        + process.env.DB_USER
+        + ":"
+        + process.env.DB_PWORD
+        + "@" + process.env.DB_CLUSTER
+        + "."
+        + process.env.DB_URL;
 
     mongoose
         .connect(uri, {
-            // .connect(process.env.MONGO_PROD_URI, {
             useNewUrlParser: true,
             useUnifiedTopology: true
         })
-        .then(() => console.log("Database connected!"))
+        .then(() => console.log("Database connected my homie!"))
         .catch(err => console.log(err));
 
-// beta
-    const Tags = mongoose.model("Tags", new mongoose.Schema({
-        name: {
-            type: String,
-            unique: true
-        },
-        description: {
-            type: String
-        },
-        username: {
-            type: String,
-        },
-        usage_count: {
-            type: Number,
-            get: v => Math.round(v),
-            set: v => Math.round(v),
-            default: 0,
-            required: true
-        }
-    }))
+    // This is reserved for the welcome message...
+    // client.once('ready', () => {
+    //     // code stub
+    // });
 
-
-    client.once('ready', () => {
-        //gamma
-    });
-
+    // Get command interactions
     client.on('interactionCreate', async interaction => {
         if (!interaction.isCommand()) return;
 
@@ -79,11 +69,13 @@ async function init() {
         }
     });
 
+    // Get button interactions
     client.on('interactionCreate', interaction => {
         if (!interaction.isButton()) return;
         console.log(interaction);
     })
 
+    // Execute login
     client.login(token)
 }
 

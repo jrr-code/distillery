@@ -1,2 +1,4 @@
-const Discord = require("discord.js");
-tagSchema = require("./Schema/Tag");
+Tags = require("./Schema/Tag");
+Games = require('./Schema/Game');
+
+module.exports = {Games, Tags};
