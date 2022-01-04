@@ -1,0 +1,1 @@
+// Checks to see if player is in a game or not.
