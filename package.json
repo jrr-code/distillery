@@ -1,7 +1,7 @@
 {
   "name": "distillery",
   "version": "1.0.0",
-  "description": "",
+  "description": "Discord Artillery bot by JayArghArgh",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -13,19 +13,21 @@
     "url": "git+https://github.com/jrr-code/distillery.git"
   },
   "keywords": [],
-  "author": "",
-  "license": "RMIT",
+  "author": "Justin Reid",
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/jrr-code/distillery/issues"
   },
   "homepage": "https://github.com/jrr-code/distillery#readme",
   "dependencies": {
+    "discord.js": "^13.5.0",
+    "mongoose": "^6.1.4",
+    "survey-toolbox": "^1.0.2"
+  },
+  "devDependencies": {
     "@discordjs/builders": "^0.11.0",
     "@discordjs/rest": "^0.2.0-canary.0",
     "discord-api-types": "^0.26.1",
-    "discord.js": "^13.5.0"
-  },
-  "devDependencies": {
     "dotenv": "^10.0.0",
     "eslint": "^8.6.0",
     "nodemon": "^2.0.15"

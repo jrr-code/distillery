@@ -10,7 +10,7 @@ const guildId = process.env.GUILD_ID;
 const token = process.env.TOKEN;
 
 const commands = []
-const commandFiles = fs.readdirSync('./commands').filter(file => file.endsWith('.js'));
+const commandFiles = fs.readdirSync('./Commands').filter(file => file.endsWith('.js'));
 
 for (const file of commandFiles) {
     const command = require(`./commands/${file}`);
@@ -20,5 +20,5 @@ for (const file of commandFiles) {
 const rest = new REST({ version: '9' }).setToken(token);
 
 rest.put(Routes.applicationGuildCommands(clientId, guildId), { body: commands })
-    .then(() => console.log('Successfully registered application commands.'))
+    .then(() => console.log('Successfully registered application Commands.'))
     .catch(console.error);
