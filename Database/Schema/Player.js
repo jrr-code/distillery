@@ -1,9 +1,13 @@
 const mongoose = require("mongoose");
-const { Games } = require('../Mongoose');
+// const { Games } = require('../Mongoose');
 // Stores the game players.
 
-module.exports = mongoose("Player", new mongoose.Schema({
-	easting: {
+module.exports = mongoose.model("Player", new mongoose.Schema({
+	player_id: {
+		type: String,
+		required: true,
+	},
+		easting: {
 		type: Number,
 	},
 	northing: {

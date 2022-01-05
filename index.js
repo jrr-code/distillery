@@ -2,7 +2,7 @@
 const { Client, Collection, Intents } = require('discord.js');
 const mongoose = require('mongoose');
 const fs = require('fs');
-const { Games, Tags } = require('./Database/Mongoose');
+// const { Games, Tags, Players } = require('./Database/Mongoose');
 
 const client = new Client({ intents: [Intents.FLAGS.GUILDS] });
 // Add to the client.
