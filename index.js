@@ -4,6 +4,13 @@ const mongoose = require('mongoose');
 const fs = require('fs');
 // const { Games, Tags, Players } = require('./Database/Mongoose');
 
+global.EASTING = "e";
+global.NORTHING = "n";
+global.ELEVATION = "el";
+global.BEARING = "bg";
+global.DIST_2D = "dist_2d";
+global.DIST_3D = "dist_3d";
+
 const client = new Client({ intents: [Intents.FLAGS.GUILDS] });
 // Add to the client.
 // client.Database = require('./Database/Mongoose');

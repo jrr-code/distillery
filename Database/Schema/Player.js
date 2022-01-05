@@ -6,6 +6,7 @@ module.exports = mongoose.model("Player", new mongoose.Schema({
 	player_id: {
 		type: String,
 		required: true,
+		unique: true,
 	},
 		easting: {
 		type: Number,
