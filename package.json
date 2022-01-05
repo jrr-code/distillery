@@ -6,7 +6,9 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node index.js",
-    "go": "nodemon index.js"
+    "go": "nodemon index.js",
+    "guicom": "node deploy-guild-commands.js",
+    "glocom": "node deploy-global-commands.js"
   },
   "repository": {
     "type": "git",
