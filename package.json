@@ -24,7 +24,7 @@
   "dependencies": {
     "discord.js": "^13.5.0",
     "mongoose": "^6.1.4",
-    "survey-toolbox": "^1.0.2"
+    "survey-toolbox": "^1.0.3"
   },
   "devDependencies": {
     "@discordjs/builders": "^0.11.0",

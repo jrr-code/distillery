@@ -40,12 +40,10 @@ module.exports = {
 							[ELEVATION]: thisPlayer["elevation"]
 						}
 
-						console.log(myVertex);
 						// calculate splash
 						const splash = coordinatesFromBearingDistance(myVertex, decDegrees, metres);
-						console.log("splash: ", splash);
-						// determine result.
 
+						// determine result.
 						// narrow the query results straight away
 						let dbExpr;
 						switch (true) {
@@ -77,9 +75,7 @@ module.exports = {
 								[NORTHING]: quadrantPlayers[playerTarget]["northing"],
 								[ELEVATION]: quadrantPlayers[playerTarget]["elevation"]
 							}
-							console.log("tgt: ", targetVertex, splash);
 							let checkSplash = bearingDistanceFromCoordinates(splash, targetVertex);
-							console.log(checkSplash);
 							if (checkSplash[DIST_2D] < 500 ) {
 								hitArray.push(quadrantPlayers[playerTarget]["player_id"])
 							} else {

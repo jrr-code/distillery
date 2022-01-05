@@ -55,6 +55,8 @@ async function init() {
         .then(() => console.log("Database connected my homie!"))
         .catch(err => console.log(err));
 
+    // console.log(uri)
+
     // This is reserved for the welcome message...
     // client.once('ready', () => {
     //     // code stub
