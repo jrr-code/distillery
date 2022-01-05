@@ -22,9 +22,21 @@ module.exports = mongoose.model("Game", new mongoose.Schema({
 		type: Number,
 		default: 20000
 	},
+	min_el: {
+		type: Number,
+		default: 300
+	},
+	max_el: {
+		type: Number,
+		default: 350
+	},
 	game_status: {
 		type: String,
 		default: "paused"
-	}
+	},
+	game_boundary: {
+		type: Number,
+		default: 15000
+	},
 }
 ));

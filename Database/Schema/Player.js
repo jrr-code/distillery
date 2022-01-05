@@ -28,6 +28,7 @@ module.exports = mongoose.model("Player", new mongoose.Schema({
 	},
 	player_class: {
 		type: String,
+		default: "Gun Number",
 	},
 	game_id: {
 		type: mongoose.Schema.Types.ObjectId,

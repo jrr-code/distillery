@@ -1,7 +1,7 @@
 // Creates a new game (admin only - specifically, JRR)
 const { SlashCommandBuilder } = require('@discordjs/builders');
 const { Games } = require('../Database/Mongoose');
-const admin_mode = false
+const admin_mode = false;
 
 
 module.exports = {
@@ -17,7 +17,10 @@ module.exports = {
 					});
 					return interaction.reply("Game created");
 				} catch (error) {
-					console.log(error);
+					return interaction.reply({
+						content: error.message,
+						ephemeral: true
+					});
 				}
 			} else {
 				return interaction.reply({
